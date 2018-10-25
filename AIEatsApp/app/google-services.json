@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "290329611220",
+    "firebase_url": "https://aieats-52891.firebaseio.com",
+    "project_id": "aieats-52891",
+    "storage_bucket": "aieats-52891.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290329611220:android:9e90239b66f83bb0",
+        "android_client_info": {
+          "package_name": "comp5216.sydney.edu.au.aieatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290329611220-4v882c7fosvesrsnnmbs55718ib0cui4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "comp5216.sydney.edu.au.aieatsapp",
+            "certificate_hash": "735f213956bd0f9d8f6096a00e2299d3060b5517"
+          }
+        },
+        {
+          "client_id": "290329611220-sc9bto8a3sl2icbatm2egf49fmoahlki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtegVBNY61ITuwkyiT_H_2LZAUjYO3JVg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290329611220-sc9bto8a3sl2icbatm2egf49fmoahlki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

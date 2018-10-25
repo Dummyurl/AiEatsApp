@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AIEatsApp</string>
+    <string-array name="user_type_array">
+        <item>You Will Login As...</item>
+        <item>Customer</item>
+        <item>Seller</item>
+        <item>Delivery Driver</item>
+    </string-array>
+</resources>
