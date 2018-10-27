@@ -65,9 +65,66 @@
             android:layout_height="wrap_content" />
 
     </android.support.design.widget.TextInputLayout>
+    
+    <LinearLayout
+        android:id="@+id/login_input_identity"
+        android:layout_below="@+id/register_password"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#c4c8c9"
+            android:layout_margin="5dp" /> 
+        <TextView
+            android:padding="5dp"
+            android:text="Your Identity"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#c4c8c9"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@id/login_input_identity"
+        android:id="@+id/register_identity_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_input_identity_name"
+            android:hint="Enter Your Real Name"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@id/register_identity_name"
+        android:id="@+id/register_identity_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_input_identity_number"
+            android:hint="Enter Your National Identity Number"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:layout_below="@+id/register_password"
+        android:layout_below="@+id/register_identity_number"
         android:id="@+id/btn_register"
         android:text="Register"
         android:background="#263238"

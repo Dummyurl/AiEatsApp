@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "290329611220-4v882c7fosvesrsnnmbs55718ib0cui4.apps.googleusercontent.com",
+          "client_id": "290329611220-br5t7ithlnu0h5plrln8gsfp5dp3plkq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "comp5216.sydney.edu.au.aieatsapp",
-            "certificate_hash": "735f213956bd0f9d8f6096a00e2299d3060b5517"
+            "certificate_hash": "da6c262b0534b8f8bff73b2a5631b22a4eb72c3b"
           }
         },
         {

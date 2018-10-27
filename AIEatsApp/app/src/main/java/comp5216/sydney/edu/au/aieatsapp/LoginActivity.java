@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginEmail;
     private EditText loginPassword;
     private Button login;
+    private TextView signInWithStudentCard;
     private TextView register;
     private TextView forgotPassWord;
     //Firebase setup
@@ -42,9 +43,10 @@ public class LoginActivity extends AppCompatActivity {
         loginEmail = (EditText) findViewById(R.id.login_input_email);
         loginPassword = (EditText) findViewById(R.id.login_input_password);
         forgotPassWord = (TextView) findViewById(R.id.login_forgetPassword);
+        signInWithStudentCard = (TextView) findViewById(R.id.login_loginByFace);
         login = (Button)findViewById(R.id.btn_login);
         userTypeSelection = (Spinner)findViewById(R.id.userTypeSelection);
-        //Set up Firebase
+        //Set up FireBase
         mAuth = FirebaseAuth.getInstance();
         //Set up firebase state listener
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -79,6 +81,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this,ForgotPassword.class));
                 finish();
+            }
+        });
+        //set onclick listener for signInByStudentCard
+        signInWithStudentCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,identityCardLoginActivity.class));
             }
         });
         //set onclick listener of login button
