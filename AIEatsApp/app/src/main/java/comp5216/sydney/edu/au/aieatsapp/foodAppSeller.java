@@ -18,31 +18,35 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class foodAppSeller extends AppCompatActivity {
 
-    private EditText changeNewPassword;
     private TextView welcome;
-    private Button changePassword,logout;
+    private Button profile_edit,food_manager,logout;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_main_app);
+        setContentView(R.layout.activity_food_app_seller);
         //set views
-        changeNewPassword = (EditText)findViewById(R.id.new_password);
         welcome = (TextView) findViewById(R.id.welcome_user);
-        changePassword = (Button)findViewById(R.id.btn_new_password);
-        logout = (Button)findViewById(R.id.btn_logout);
+        profile_edit = (Button) findViewById(R.id.edit_profile);
+        food_manager = (Button) findViewById(R.id.manage_food);
+        logout = (Button)findViewById(R.id.logout);
         mAuth = FirebaseAuth.getInstance();
         //Session Check
         if (mAuth.getCurrentUser() != null){
             welcome.setText("Welcome, " + mAuth.getCurrentUser().getDisplayName());
         }
-        //change password onclick listener
-        changePassword.setOnClickListener(new View.OnClickListener() {
+        //edit profile onclick listener
+        profile_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newPassword = changeNewPassword.getText().toString().trim();
-                setNewPassword(newPassword);
+                startActivity(new Intent(foodAppSeller.this,SellerProfile.class));
+            }
+        });
+        food_manager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(foodAppSeller.this,SellerFoodList.class));
             }
         });
         //logout onclick listener

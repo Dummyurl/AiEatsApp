@@ -152,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                                         finish();
                                     }
                                     else if (userType.equals("Delivery Driver")){
-                                        startActivity(new Intent(LoginActivity.this,foodAppSeller.class));
+                                        startActivity(new Intent(LoginActivity.this,foodAppDelivery.class));
                                         finish();
                                     }
                                 }
