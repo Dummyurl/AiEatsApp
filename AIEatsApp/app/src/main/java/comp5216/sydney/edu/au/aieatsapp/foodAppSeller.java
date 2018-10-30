@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class foodAppSeller extends AppCompatActivity {
 
     private TextView welcome;
-    private Button profile_edit,food_manager,logout;
+    private Button profile_edit,food_manager,logout,manage_order;
     private FirebaseAuth mAuth;
 
     @Override
@@ -30,6 +30,7 @@ public class foodAppSeller extends AppCompatActivity {
         welcome = (TextView) findViewById(R.id.welcome_user);
         profile_edit = (Button) findViewById(R.id.edit_profile);
         food_manager = (Button) findViewById(R.id.manage_food);
+        manage_order = (Button) findViewById(R.id.manage_order);
         logout = (Button)findViewById(R.id.logout);
         mAuth = FirebaseAuth.getInstance();
         //Session Check
@@ -43,10 +44,18 @@ public class foodAppSeller extends AppCompatActivity {
                 startActivity(new Intent(foodAppSeller.this,SellerProfile.class));
             }
         });
+        //edit food manager onclick listener
         food_manager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(foodAppSeller.this,SellerFoodList.class));
+            }
+        });
+        //edit manage order onclick listener
+        manage_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(foodAppSeller.this,SellerOrderList.class));
             }
         });
         //logout onclick listener
@@ -64,19 +73,6 @@ public class foodAppSeller extends AppCompatActivity {
                             finish();
                         }
                     },1000);
-                }
-            }
-        });
-    }
-
-    private void setNewPassword(String newPassword) {
-        FirebaseUser user = mAuth.getCurrentUser();
-        user.updatePassword(newPassword).addOnCompleteListener(this, new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(foodAppSeller.this,"You have successfully change " +
-                            "your password!",Toast.LENGTH_LONG).show();
                 }
             }
         });

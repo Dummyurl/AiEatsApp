@@ -74,7 +74,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:clickable="true"
-        android:text="CLICK HERE TO LOGIN WITH YOUR STUDENT CARD"
+        android:text="CLICK HERE TO LOGIN WITH YOUR IDENTITY CARD"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
 

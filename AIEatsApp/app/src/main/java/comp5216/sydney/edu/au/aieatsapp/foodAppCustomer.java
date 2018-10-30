@@ -17,31 +17,43 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class foodAppCustomer extends AppCompatActivity {
-    private EditText changeNewPassword;
     private TextView welcome;
-    private Button changePassword,logout;
+    private Button edit_profile,logout,foodCourt,check_order;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_main_app);
+        setContentView(R.layout.activity_food_app_customer);
         //set views
-        changeNewPassword = (EditText)findViewById(R.id.new_password);
+        edit_profile = (Button) findViewById(R.id.edit_profile_customer);
         welcome = (TextView) findViewById(R.id.welcome_user);
-        changePassword = (Button)findViewById(R.id.btn_new_password);
         logout = (Button)findViewById(R.id.btn_logout);
+        foodCourt = (Button) findViewById(R.id.food_court_customer);
+        check_order = (Button)findViewById(R.id.manage_order_customer);
         mAuth = FirebaseAuth.getInstance();
         //Session Check
         if (mAuth.getCurrentUser() != null){
             welcome.setText("Welcome, " + mAuth.getCurrentUser().getDisplayName());
         }
-        //change password onclick listener
-        changePassword.setOnClickListener(new View.OnClickListener() {
+        //edit profile onclick listener
+        edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newPassword = changeNewPassword.getText().toString().trim();
-                setNewPassword(newPassword);
+                startActivity(new Intent(foodAppCustomer.this,CustomerProfile.class));
+            }
+        });
+        //food court onclick listener
+        foodCourt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(foodAppCustomer.this,CustomerFoodCourt.class));
+            }
+        });
+        check_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(foodAppCustomer.this,CustomerOrderList.class));
             }
         });
         //logout onclick listener
@@ -59,19 +71,6 @@ public class foodAppCustomer extends AppCompatActivity {
                             finish();
                         }
                     },1000);
-                }
-            }
-        });
-    }
-
-    private void setNewPassword(String newPassword) {
-        FirebaseUser user = mAuth.getCurrentUser();
-        user.updatePassword(newPassword).addOnCompleteListener(this, new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(foodAppCustomer.this,"You have successfully change " +
-                            "your password!",Toast.LENGTH_LONG).show();
                 }
             }
         });

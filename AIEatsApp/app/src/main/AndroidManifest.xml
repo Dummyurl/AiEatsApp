@@ -37,7 +37,14 @@
         <activity android:name=".identityCardLoginActivity" />
         <activity android:name=".SellerProfile" />
         <activity android:name=".SellerFoodList" />
-        <activity android:name=".SellerAddFood"></activity>
+        <activity android:name=".SellerAddFood" />
+        <activity android:name=".CustomerProfile" />
+        <activity android:name=".CustomerFoodCourt" />
+        <activity android:name=".customerOrderPage" />
+        <activity android:name=".CustomerOrderList"></activity>
+        <activity android:name=".SellerOrderList"></activity>
+        <activity android:name=".DeliveryProfile"></activity>
+        <activity android:name=".deliveryOrderList"></activity>
     </application>
 
 </manifest>
